@@ -3,6 +3,8 @@ import 'package:appetit_app/tools/theme/tema.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'tela_login/tela_login_controller.dart';
+
 class TelaLogin extends StatefulWidget {
   @override
   _TelaLoginState createState() => _TelaLoginState();
@@ -12,12 +14,14 @@ class _TelaLoginState extends State<TelaLogin> {
   bool senhaOculta;
   TextEditingController emailController;
   TextEditingController senhaController;
+  TelaLoginController controller;
 
   @override
   initState() {
     senhaOculta = true;
     emailController = new TextEditingController();
     senhaController = new TextEditingController();
+    controller = new TelaLoginController();
     super.initState();
   }
 
@@ -123,7 +127,12 @@ class _TelaLoginState extends State<TelaLogin> {
                   ),
                   child: RaisedButton(
                       color: Theme.of(context).primaryColor,
-                      onPressed: _validarForm(),
+                      onPressed: controller.validarForm(
+                        emailController.text,
+                        senhaController.text,
+                      )
+                          ? proximaTela
+                          : null,
                       child: Text(
                         "ENTRAR",
                         style: TextStyle(
@@ -140,15 +149,7 @@ class _TelaLoginState extends State<TelaLogin> {
     );
   }
 
-  _validarForm() {
-    // Este método valida se o email está de acordo com a regra abaixo
-    // e se a senha tem mais de 8 caracteres.
-    if (emailController.text.isNotEmpty &&
-        RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-            .hasMatch(emailController.text) &&
-        senhaController.text.length > 8) {
-      return () => Navigator.pushNamed(context, '/historicoDePedidos');
-    }
-    return null;
+  proximaTela() {
+    return Navigator.pushNamed(context, '/historicoDePedidos');
   }
 }
