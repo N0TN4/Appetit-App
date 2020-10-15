@@ -3,7 +3,7 @@ import 'package:appetit_app/tools/theme/tema.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'tela_login/tela_login_controller.dart';
+import 'tela_login_controller.dart';
 
 class TelaLogin extends StatefulWidget {
   @override

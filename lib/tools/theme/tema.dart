@@ -9,10 +9,15 @@ class Tema {
       fontWeight: FontWeight.normal,
       color: ColorsApp.corPrimaria,
     ),
+    headline3: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: Colors.black87,
+    ),
     subtitle1: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.normal,
-      color: Colors.black.withAlpha(56),
+      color: Colors.black45,
     ),
   );
   static InputDecorationTheme inputTema = InputDecorationTheme(

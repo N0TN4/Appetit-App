@@ -45,7 +45,8 @@ class _TelaHistoricoDePedidosState extends State<TelaHistoricoDePedidos> {
                         color: Colors.black.withOpacity(0.56),
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () =>
+                        Navigator.pushNamed(context, '/informaItensDoPedido'),
                   ),
                 ),
                 Padding(
