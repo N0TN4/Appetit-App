@@ -1,3 +1,4 @@
+import 'package:appetit_app/components/main_cabecalho.dart';
 import 'package:appetit_app/tools/theme/colors_app.dart';
 import 'package:appetit_app/tools/theme/tema.dart';
 import 'package:flutter/material.dart';
@@ -21,17 +22,8 @@ class _TelaHistoricoDePedidosState extends State<TelaHistoricoDePedidos> {
                 SizedBox(
                   height: 56,
                 ),
-                Text(
-                  "Olá, Alessandra!",
-                  style: Tema.texto.headline1,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 8, bottom: 32),
-                  child: Container(
-                    width: 240,
-                    height: 2,
-                    color: ColorsApp.customGreen,
-                  ),
+                MainCabecalho(
+                  titulo: "Olá, Alessandra!",
                 ),
                 Card(
                   child: ListTile(

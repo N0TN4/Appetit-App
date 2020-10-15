@@ -1,9 +1,13 @@
+import 'package:appetit_app/components/card_produto.dart';
+import 'package:appetit_app/components/main_cabecalho.dart';
 import 'package:appetit_app/components/progress_indicator.dart';
+import 'package:appetit_app/controllers/detalhes_pedido_controller.dart';
 import 'package:appetit_app/models/produto.dart';
 import 'package:appetit_app/screens/tela_informa_itens_do_pedido/produto_itens_dao.dart';
 import 'package:appetit_app/tools/theme/colors_app.dart';
 import 'package:appetit_app/tools/theme/tema.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class InformaItensDoPedido extends StatefulWidget {
   @override
@@ -29,21 +33,10 @@ class _InformaItensDoPedidoState extends State<InformaItensDoPedido> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                "Informações para o pedido",
-                style: Tema.texto.headline1,
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 8, bottom: 16),
-                child: Container(
-                  width: 240,
-                  height: 2,
-                  color: ColorsApp.customGreen,
-                ),
-              ),
-              Text(
-                "Preencha as informações abaixo para concluir o pedido.",
-                style: Tema.texto.subtitle1,
+              MainCabecalho(
+                titulo: "Informações para o pedido",
+                subtitulo:
+                    "Preencha as informações abaixo para concluir o pedido.",
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 24, bottom: 8),
@@ -99,8 +92,9 @@ class _InformaItensDoPedidoState extends State<InformaItensDoPedido> {
                         itemCount:
                             dao.categorias[indexCategoria].produtos.length,
                         itemBuilder: (context, indexItem) {
-                          return _buildCardProduto(dao
-                              .categorias[indexCategoria].produtos[indexItem]);
+                          return CardProduto(
+                              produto: dao.categorias[indexCategoria]
+                                  .produtos[indexItem]);
                         },
                       ),
                     ],
@@ -111,29 +105,6 @@ class _InformaItensDoPedidoState extends State<InformaItensDoPedido> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildCardProduto(Produto produto) {
-    return Container(
-      padding: EdgeInsets.only(bottom: 8),
-      child: Card(
-          elevation: 2,
-          child: ListTile(
-            leading: ClipOval(child: Image.asset(produto.avatar)),
-            title: Text(
-              produto.nome ?? "",
-              style: Tema.texto.headline3,
-            ),
-            subtitle: Text(produto.descricao ?? ""),
-            trailing: Text(
-              "R\$ 2,25",
-              style: Tema.texto.headline3,
-            ),
-            onTap: (){
-              
-            },
-          )),
     );
   }
 }
