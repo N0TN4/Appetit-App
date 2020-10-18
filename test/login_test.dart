@@ -1,4 +1,4 @@
-import 'package:appetit_app/screens/tela_login/tela_login_controller.dart';
+import 'package:appetit_app/controllers/tela_login_controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

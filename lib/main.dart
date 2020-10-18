@@ -1,11 +1,13 @@
+import 'package:appetit_app/controllers/cliente_controller.dart';
+import 'package:appetit_app/screens/tela_cliente.dart';
 import 'package:appetit_app/screens/tela_detalhes_item.dart';
-import 'package:appetit_app/screens/tela_login/tela_login.dart';
+import 'package:appetit_app/screens/tela_login.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'controllers/detalhes_pedido_controller.dart';
-import 'screens/tela_historico_de_pedidos/tela_historico_de_pedidos.dart';
-import 'screens/tela_informa_itens_do_pedido/informa_itens_do_pedido.dart';
+import 'controllers/informa_itens_controller.dart';
+import 'screens/tela_historico_de_pedidos.dart';
+import 'screens/informa_itens_do_pedido.dart';
 import 'tools/theme/colors_app.dart';
 import 'tools/theme/tema.dart';
 
@@ -18,8 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<DetalhesPedidoController>.value(
-            value: DetalhesPedidoController())
+        ChangeNotifierProvider<DetalhesPedidoController>(
+            create: (context) => DetalhesPedidoController()),
+        ChangeNotifierProvider<InformaItensController>(
+            create: (context) => InformaItensController()),
+        ChangeNotifierProvider<ClienteController>(
+            create: (context) => ClienteController())
       ],
       child: MaterialApp(
         title: 'Appetit App',
@@ -39,12 +45,13 @@ class MyApp extends StatelessWidget {
           textTheme: Tema.texto,
           accentIconTheme: Tema.iconesTema,
         ),
-        initialRoute: '/informaItensDoPedido',
+        initialRoute: '/clientes',
         routes: {
           '/': (context) => TelaLogin(),
           '/historicoDePedidos': (context) => TelaHistoricoDePedidos(),
           '/informaItensDoPedido': (context) => InformaItensDoPedido(),
           '/detalhesItem': (context) => TelaDetalhesItem(),
+          '/clientes': (context) => TelaCliente(),
         },
       ),
     );
