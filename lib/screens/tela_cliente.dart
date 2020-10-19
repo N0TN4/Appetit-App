@@ -116,7 +116,7 @@ class _TelaClienteState extends State<TelaCliente> {
               ),
             ),
             GestureDetector(
-              // onTap: () => Navigator.pushNamed(context, '/clientes'),
+              onTap: () => Navigator.pushNamed(context, '/finalizaPedido'),
               child: Container(
                 padding: const EdgeInsets.only(right: 16),
                 child: Row(

@@ -2,6 +2,7 @@ import 'package:appetit_app/components/card_produto.dart';
 import 'package:appetit_app/components/main_cabecalho.dart';
 import 'package:appetit_app/components/progress_indicator.dart';
 import 'package:appetit_app/controllers/informa_itens_controller.dart';
+import 'package:appetit_app/tools/formata_numero.dart';
 import 'package:appetit_app/tools/theme/colors_app.dart';
 import 'package:appetit_app/tools/theme/tema.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +109,7 @@ class InformaItensDoPedido extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Text(
-                  "Total: ${controller.valorTotalCarrinho}",
+                  "Total: ${FormataNumero.formatar(controller.valorTotalCarrinho.toString())}",
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),

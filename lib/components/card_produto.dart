@@ -1,3 +1,4 @@
+import 'package:appetit_app/tools/formata_numero.dart';
 import 'package:appetit_app/tools/theme/colors_app.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -35,7 +36,7 @@ class CardProduto extends StatelessWidget {
                 : Tema.texto.subtitle1,
           ),
           trailing: Text(
-            "R\$ 2,25",
+            "${FormataNumero.formatar(produto.valorUnitario.toString())}",
             style: produto.selecionado && selecionado
                 ? Tema.texto.headline3.copyWith(color: Colors.white)
                 : Tema.texto.headline3,
