@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             iconTheme: IconThemeData(color: ColorsApp.corPrimaria),
             color: ColorsApp.backgroundColor,
           ),
-          fontFamily: 'Poppins',
+          fontFamily: 'Open Sans',
           primaryColor: ColorsApp.corPrimaria,
           accentColor: ColorsApp.corPrimaria,
           iconTheme: Tema.iconesTema,

@@ -50,8 +50,10 @@ class _TelaLoginState extends State<TelaLogin> {
                 Padding(
                   padding: const EdgeInsets.only(top: 16, bottom: 32),
                   child: Text(
-                      "Nós sabemos a importância de estar sempre de barriga cheia e o quanto isso pode ajudar no seu dia.",
-                      style: Tema.texto.subtitle1),
+                    "Nós sabemos a importância de estar sempre de barriga cheia e o quanto isso pode ajudar no seu dia.",
+                    style: Tema.texto.subtitle1,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 TextFormField(
                   onChanged: (text) =>

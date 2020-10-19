@@ -6,16 +6,19 @@ class Tema {
   static TextTheme texto = new TextTheme(
     headline1: TextStyle(
       fontSize: 24,
+      fontFamily: 'Open Sans',
       fontWeight: FontWeight.normal,
       color: ColorsApp.corPrimaria,
     ),
     headline3: TextStyle(
       fontSize: 16,
+      fontFamily: 'Open Sans',
       fontWeight: FontWeight.w600,
       color: Colors.black87,
     ),
     subtitle1: TextStyle(
       fontSize: 16,
+      fontFamily: 'Open Sans',
       fontWeight: FontWeight.normal,
       color: Colors.black45,
     ),
