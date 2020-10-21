@@ -10,7 +10,6 @@ Este desafio contempla o desenvolvimento de uma plataforma de solicitação de p
 
 
 ## Imagens do software
-![alt text](https://i.ibb.co/dPHct41/Screenshot-1603306903.png)
-![alt text](https://ibb.co/7Ch1Kn7)
-![alt text](https://ibb.co/z8Y6pgZ)
-![alt text](https://ibb.co/BBb9Gxz”)
+![Login](https://i.ibb.co/dPHct41/Screenshot-1603306903.png)
+![Historico](https://i.ibb.co/jDmSz26/Screenshot-1603306919.png)
+![Cardapio de itens](https://i.ibb.co/PTnDKyg/Screenshot-1603306938.png)
